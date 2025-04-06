@@ -1,7 +1,16 @@
 package main
 
 import "fmt"
+/*
+5
+AABBC
 
+6
+X_Y__X
+
+6
+B_RRBR
+*/
 func isHappy(s string) bool{
 	for i := 1; i<len(s)-1;i++{
 		if s[i] != s[i+1] && s[i] != s[i-1]{
