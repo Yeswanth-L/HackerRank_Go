@@ -5,7 +5,22 @@ import (
 	"strings"
     "math"
 )
+/*
+Sample Input 0
+3
+Ab1
 
+Sample Output 0
+3
+
+Sample Input 1
+11
+#HackerRank
+
+Sample Output 1
+1
+
+*/
 func minimumNumber(n int, password string) int {
 	// Return the minimum number of characters to make the password strong
 	res := make(map[string]bool)
@@ -33,14 +48,14 @@ func minimumNumber(n int, password string) int {
 		}
 	}
 	
-	c := 0
+	missing := 0
 	for _, val := range res {
 		if !val {
-			c++
+			missing++
 		}
 	}
     
-    return int(math.Max(float64(c), float64(6-n)))
+    return int(math.Max(float64(missing), float64(6-n)))
 }
 
 func main() {
